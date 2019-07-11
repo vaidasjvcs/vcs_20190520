@@ -1,32 +1,26 @@
 package com.vcs.git;
-
+import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.Assert.assertTrue;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-
 class AidasTest {
 	Aidas aidas;
-
+	
 	@BeforeEach
-	void setUp() throws Exception {
-		aidas = new Aidas();
-	}
-
-	@AfterEach
-	void tearDown() throws Exception {
+	void setUp() {
+		this.aidas = new Aidas();
 	}
 
 	@Test
-	void test_GetGreeting() {
+	void testGetGreeting() {
 		// setup
 		
 		// test
-		String aidasSet = aidas.getGreeting("Julia ROberts");
-		// assertion
-		assertTrue("Pasisveikino", aidasSet.contains("Julia ROberts"));
-		System.out.println(aidasSet);
+		String strName = aidas.getGreeting("Julia Roberts");
+		System.out.println(strName);
+		// assert
+		assertTrue(strName.contains("Julia Roberts"));
 	}
 
 }
